@@ -11,14 +11,19 @@
   padding-left: 1rem;
 }
 
+.shop-header a {
+  display: flex;
+  align-items: flex-end;
+}
+
 .shop-header .shopping-cart {
-  align-self: center;
-  font-size: 1.3rem;
   padding-right: 1rem;
+  padding-bottom: 10px;
+  font-size: 1.3rem;
 }
 
 .shop-header .shopping-cart .cart-icon {
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   color: cadetblue;
   margin-right: 10px;
 }
