@@ -39,7 +39,14 @@ const allBooksRemovedFromCard = (bookId) => {
   };
 }
 
-const fetchBooks = (bookstoreService, dispatch) => () => {
+const fetchBooksOld = (bookstoreService, dispatch) => () => {
+  dispatch(fetchBooksRequest());
+  bookstoreService.getBooks()
+    .then((data) => dispatch(fetchBooksSuccess(data)))
+    .catch((err) => dispatch(fetchBooksFailure(err)));
+}
+
+const fetchBooks = (bookstoreService) => () => (dispatch) => {
   dispatch(fetchBooksRequest());
   bookstoreService.getBooks()
     .then((data) => dispatch(fetchBooksSuccess(data)))
@@ -48,6 +55,7 @@ const fetchBooks = (bookstoreService, dispatch) => () => {
 
 export {
   fetchBooks,
+  fetchBooksOld,
   bookAddedToCard,
   bookRemovedFromCard,
   allBooksRemovedFromCard,

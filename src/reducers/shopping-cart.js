@@ -47,7 +47,6 @@ const updateOrder = (state, bookId, quantity) => {
 
   return {
     cartItems: updateCartItems(cartItems, newItem, itemIdx),
-    orderTotal: 0,
   };
 }
 
@@ -55,7 +54,6 @@ const updateShoppingCart = (state, action) => {
   if (state === undefined) {
     return {
       cartItems: [],
-      orderTotal: 0,
     };
   }
 

@@ -63,10 +63,10 @@ const ShoppingCartTable = ({
   );
 };
 
-const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal } }) => {
+const mapStateToProps = ({ shoppingCart: { cartItems } }) => {
   return {
     items: cartItems,
-    total: orderTotal,
+    total: cartItems.reduce((prev, { price }) => prev + price, 0),
   }
 }
 
